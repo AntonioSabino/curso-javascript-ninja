@@ -35,8 +35,11 @@ var novoArray = ['Junior', 'Maria', 14, false, 007, 'João']
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
+doisP(novoArray, 0)
+doisP(novoArray, 1)
+doisP(novoArray, 2)
+doisP(novoArray, 3)
 doisP(novoArray, 4)
-//7
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -52,30 +55,68 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-
+function book (nomeLivro) {
+  var livros = {
+    'O Primo': {
+      quantidadePaginas: 150,
+      autor: 'Primo Rico',
+      editora: 'Editora Primo'
+    },
+    'O Poder do Hábito': {
+      quantidadePaginas: 255,
+      autor: 'Um Gringo',
+      editora: 'Editora do Poder'
+    },
+    'O Pequeno Principe': {      
+      quantidadePaginas: 427,
+      autor: 'Maquiavel',
+      editora: 'Maquiavélica'
+    }
+  };
+  
+  return !nomeLivro ? livros : livros[nomeLivro];
+};
   
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log (book())
+/*{
+  'O Primo': {
+    quantidadePaginas: 150,
+    autor: 'Primo Rico',
+    editora: 'Editora Primo'
+  },
+  'O Poder do Hábito': {
+    quantidadePaginas: 255,
+    autor: 'Um Gringo',
+    editora: 'Editora do Poder'
+  },
+  'O Pequeno Principe': {
+    quantidadePaginas: 427,
+    autor: 'Maquiavel',
+    editora: 'Maquiavélica'
+  }
+}
+*/
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log( 'O livro O Primo tem ' + book('O Primo').quantidadePaginas + ' páginas!')
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log( 'O auto do livro O Primo é o ' + book('O Primo').autor + '.')
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log( 'O livro O Primo foi publicado pela editadora ' + book('O Primo').editora + '.')
